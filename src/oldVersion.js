@@ -121,14 +121,7 @@ function addNewRamen (event) {
         body: JSON.stringify(newRamen)
     })
     .then (response => response.json())
-    .then (updateRamenList => {
-        showRamens(updateRamenList);
-        event.target.name.value = '';
-        event.target.restaurant.value = '';
-        event.target.image.value = '';
-        event.target.rating.value = 0;
-        event.target['new-comment'].value = '';
-    });
+    .then (updateRamenList => showRamens(updateRamenList));
 }
 
 function deleteRamenMenu (event,ramen) {
